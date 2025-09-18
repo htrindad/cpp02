@@ -6,11 +6,13 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/17 18:42:09 by htrindad          #+#    #+#             */
-/*   Updated: 2025/09/17 18:51:36 by htrindad         ###   ########.fr       */
+/*   Updated: 2025/09/18 15:56:31 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
+
+#include <iostream>
 
 class Fixed
 {
@@ -19,8 +21,9 @@ class Fixed
 		static const int fract = 8;
 	public:
 		Fixed();
+		Fixed(const Fixed &ref);
 		Fixed &operator=(const Fixed &ref);
 		~Fixed();
 		int getRawBits() const;
 		void setRawBits(int const raw);
-}
+};
