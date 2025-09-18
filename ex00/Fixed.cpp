@@ -6,14 +6,18 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/18 15:41:36 by htrindad          #+#    #+#             */
-/*   Updated: 2025/09/18 16:04:21 by htrindad         ###   ########.fr       */
+/*   Updated: 2025/09/18 16:16:19 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.h"
 
 //CDO
-Fixed::Fixed() { std::cout << "Default constructor called\n"; }
+Fixed::Fixed()
+{
+	_fixed = 0;
+	std::cout << "Default constructor called\n";
+}
 Fixed::Fixed(const Fixed &ref)
 {
 	std::cout << "Copy constructor called\n";
