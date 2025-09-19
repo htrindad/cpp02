@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/17 18:42:09 by htrindad          #+#    #+#             */
-/*   Updated: 2025/09/18 15:56:31 by htrindad         ###   ########.fr       */
+/*   Updated: 2025/09/19 13:52:23 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ class Fixed
 {
 	private:
 		int _fixed;
-		static const int fract = 8;
+		static const int _fract = 8;
 	public:
 		Fixed();
 		Fixed(const Fixed &ref);
