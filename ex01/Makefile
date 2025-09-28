@@ -8,7 +8,7 @@ $(NAME): $(OBJ)
 	c++ $(CXXFLAGS) $(OBJ) -o $(NAME)
 
 %.o: %.cpp
-	c++ $(CXXFLAGS) -MMD -MP -c $< -o $@
+	c++ $(CXXFLAGS) -c $< -o $@
 
 all: $(NAME)
 
