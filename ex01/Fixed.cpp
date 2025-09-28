@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/18 15:41:36 by htrindad          #+#    #+#             */
-/*   Updated: 2025/09/22 11:53:18 by htrindad         ###   ########.fr       */
+/*   Updated: 2025/09/28 17:21:38 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 //CDO
 Fixed::Fixed()
 {
-	_fixed = 0;
 	std::cout << "Default constructor called\n";
+	_fixed = 0;
 }
 
 Fixed::Fixed(const Fixed &ref)
@@ -27,19 +27,14 @@ Fixed::Fixed(const Fixed &ref)
 
 Fixed::Fixed(const int par)
 {
-	bool	neg;
-
-	neg = false;
-	if (par < 0)
-		neg = true;
+	std::cout << "Fixed int constructor called\n";
 	_fixed = par << _fract;
-	if (neg)
-		_fixed |= INT_MIN; // Should I make a case for when the bitshifting causes the number to turn negative?
 }
 
 Fixed::Fixed(const float par)
 {
-	a
+	std::cout << "Fixed float constructor called\n";
+	_fixed = (int)roundf(par * (1 << _fract));
 }
 
 Fixed::~Fixed() { std::cout << "Destructor called\n"; }
@@ -54,12 +49,30 @@ Fixed &Fixed::operator=(const Fixed &ref)
 //Methods
 void Fixed::setRawBits(int const raw)
 {
-	std::cout << "setRawBits member function called\n";
-	this->_fixed = raw;
+	std::cout << "setRawBits member function calle\n";
+	_fixed = raw;
 }
 
 int Fixed::getRawBits() const
 {
 	std::cout << "getRawBits member function called\n";
-	return this->_fixed;
+	return _fixed;
+}
+
+float Fixed::toFloat() const
+{
+	std::cout << "toFloat member function called\n";
+	return (float)_fixed / (1 << _fract);
+}
+
+int Fixed::toInt() const
+{
+	std::cout << "toInt member function called\n";
+	return _fixed >> _fract;
+}
+
+std::ostream &operator<<(std::ostream &out, Fixed const &fix)
+{
+	out << fix.toFloat();
+	return out;
 }
