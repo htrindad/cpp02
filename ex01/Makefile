@@ -5,7 +5,7 @@ OBJ = $(SRC:.cpp=.o)
 CXX = c++
 
 $(NAME): $(OBJ)
-	c++ $(CFLAGS) $(OBJ) -o $(NAME)
+	c++ $(CXXFLAGS) $(OBJ) -o $(NAME)
 
 all: $(NAME)
 
