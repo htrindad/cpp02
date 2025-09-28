@@ -1,13 +1,18 @@
-NAME = fixed
-CFLAGS = -Wall -Werror -Wextra -O3 --std=c++98
+NAME = Fixed
+CFLAGS = -Wall -Werror -Wextra -O3 -std=c++98
 SRC = Fixed.cpp main.cpp
+OBJ = $(SRC:.cpp=.o)
 
-$(NAME):
-	c++ $(CFLAGS) $(SRC) -o $(NAME)
 
 all: $(NAME)
 
-clean:
-	rm $(NAME)
+$(NAME): $(OBJ)
+	c++ $(CFLAGS) $(OBJ) -o $(NAME)
 
-re: clean all
+clean:
+	rm -f $(OBJ)
+
+fclean: clean
+	rm -f $(NAME)
+
+re: fclean all

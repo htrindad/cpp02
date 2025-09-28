@@ -6,13 +6,14 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/17 18:42:09 by htrindad          #+#    #+#             */
-/*   Updated: 2025/09/19 13:51:35 by htrindad         ###   ########.fr       */
+/*   Updated: 2025/09/19 13:58:11 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
+#include <limits.h>
 
 class Fixed
 {

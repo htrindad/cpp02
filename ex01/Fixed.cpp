@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/18 15:41:36 by htrindad          #+#    #+#             */
-/*   Updated: 2025/09/19 13:51:43 by htrindad         ###   ########.fr       */
+/*   Updated: 2025/09/22 11:53:18 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,19 @@ Fixed::Fixed(const Fixed &ref)
 
 Fixed::Fixed(const int par)
 {
+	bool	neg;
+
+	neg = false;
+	if (par < 0)
+		neg = true;
 	_fixed = par << _fract;
+	if (neg)
+		_fixed |= INT_MIN; // Should I make a case for when the bitshifting causes the number to turn negative?
+}
+
+Fixed::Fixed(const float par)
+{
+	a
 }
 
 Fixed::~Fixed() { std::cout << "Destructor called\n"; }
