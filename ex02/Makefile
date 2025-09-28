@@ -15,4 +15,7 @@ clean:
 fclean: clean
 	rm -f $(NAME)
 
+%.o: %.cpp
+	c++ $(CXXFLAGS) -c $< -o $@
+
 re: fclean all
