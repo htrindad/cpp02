@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/17 18:42:09 by htrindad          #+#    #+#             */
-/*   Updated: 2025/09/28 18:59:31 by htrindad         ###   ########.fr       */
+/*   Updated: 2025/09/28 19:06:48 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,10 @@ class Fixed
 		Fixed operator-(const Fixed &ref) const;
 		Fixed operator*(const Fixed &ref) const;
 		Fixed operator/(const Fixed &ref) const;
-		Fixed &operator++() const;
-		Fixed &operator--() const;
-		Fixed &operator++(int n) const;
-		Fixed &operator--(int n) const;
+		Fixed &operator++();
+		Fixed &operator--();
+		Fixed &operator++(int n);
+		Fixed &operator--(int n);
 		int getRawBits() const;
 		void setRawBits(int const raw);
 		float toFloat() const;
