@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/18 15:41:36 by htrindad          #+#    #+#             */
-/*   Updated: 2025/10/04 17:27:21 by htrindad         ###   ########.fr       */
+/*   Updated: 2025/10/04 17:46:03 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,34 +69,14 @@ Fixed Fixed::operator--(int)
 }
 
 //Methods
-void Fixed::setRawBits(int const raw)
-{
-	std::cout << "setRawBits member function calle\n";
-	_fixed = raw;
-}
-
-int Fixed::getRawBits() const
-{
-	std::cout << "getRawBits member function called\n";
-	return _fixed;
-}
-
-float Fixed::toFloat() const
-{
-	std::cout << "toFloat member function called\n";
-	return (float)_fixed / (1 << _fract);
-}
-
-int Fixed::toInt() const
-{
-	std::cout << "toInt member function called\n";
-	return _fixed >> _fract;
-}
-
-Fixed &Fixed::min(const Fixed &ref1, const Fixed &ref2) { return ref1 < ref2 ? ref1 : ref2; }
-Fixed &Fixed::max(const Fixed &ref1, const Fixed &ref2) { return ref1 > ref2 ? ref1 : ref2; }
-Fixed &Fixed::min(Fixed &ref1, Fixed &ref2) { return Fixed::min(ref1, ref2); }
-Fixed &Fixed::max(Fixed &ref1, Fixed &ref2) { return Fixed::max(ref1, ref2); }
+void Fixed::setRawBits(int const raw) { _fixed = raw; }
+int Fixed::getRawBits() const { return _fixed; }
+float Fixed::toFloat() const { return (float)_fixed / (1 << _fract); }
+int Fixed::toInt() const { return _fixed >> _fract; }
+const Fixed &Fixed::min(const Fixed &ref1, const Fixed &ref2) { return ref1 < ref2 ? ref1 : ref2; }
+const Fixed &Fixed::max(const Fixed &ref1, const Fixed &ref2) { return ref1 > ref2 ? ref1 : ref2; }
+Fixed &Fixed::min(Fixed &ref1, Fixed &ref2) { return const_cast<Fixed &>(Fixed::min(static_cast<const Fixed &>(ref1), static_cast<const Fixed &>(ref2))); }
+Fixed &Fixed::max(Fixed &ref1, Fixed &ref2) { return const_cast<Fixed &>(Fixed::max(static_cast<const Fixed &>(ref1), static_cast<const Fixed &>(ref2))); }
 
 std::ostream &operator<<(std::ostream &out, Fixed const &fix)
 {
