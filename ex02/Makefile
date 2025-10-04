@@ -19,3 +19,7 @@ fclean: clean
 	c++ $(CXXFLAGS) -c $< -o $@
 
 re: fclean all
+
+clear:
+	@clear
+	@make
