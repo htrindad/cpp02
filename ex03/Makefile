@@ -22,4 +22,4 @@ re: fclean all
 
 clear:
 	@clear
-	@make
+	@make re
