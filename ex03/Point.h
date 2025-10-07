@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 15:41:50 by htrindad          #+#    #+#             */
-/*   Updated: 2025/10/06 17:54:04 by htrindad         ###   ########.fr       */
+/*   Updated: 2025/10/07 18:57:42 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 class Point
 {
 	private:
-		Fixed x;
-		Fixed y;
+		Fixed const x;
+		Fixed const y;
 	public:
 		Point();
 		~Point();
